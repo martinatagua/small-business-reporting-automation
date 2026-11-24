@@ -1,0 +1,5 @@
+source_file,source_id,expected_outcome,rejection_code,preamble_rows,header_rows,blank_rows,expected_records
+centro_ventas_2026-10.csv,centro-csv,processed,,0,1,0,53
+norte_ventas_2026-10.xlsx,norte-xlsx,processed,,2,1,1,55
+sur_ventas_2026-10_web.csv,sur-csv,processed,,0,1,1,35
+sur_ventas_2026-10_tienda.xlsx,sur-xlsx,processed,,0,1,1,34

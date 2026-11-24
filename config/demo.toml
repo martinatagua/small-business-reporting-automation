@@ -1,0 +1,123 @@
+# config/demo.toml — configuración de demostración (datos sintéticos).
+#
+# AVISOS:
+#   * [limits]: valores aprobados por el propietario (P-12, 2026-11-21) y usados por la ingesta (F4). No son
+#     un límite de RAM del proceso ni una garantía de rendimiento.
+#   * total_tolerance: valor APROBADO por el propietario en P-03 (2026-11-20): "0.01" -> Decimal("0.01");
+#     R11 si abs(quantity * unit_price - reported_total) > total_tolerance (estricto, solo con reported_total).
+#   * period_start / period_end: período de demostración (octubre de 2026). La clasificación R10 está
+#     APROBADA en P-02 (2026-11-20): fuera de [period_start, period_end], extremos inclusivos -> out_of_scope.
+#   * catalog_path: apunta al catálogo ficticio que genera F3 (data/reference/products.csv). La carga de la
+#     configuración no comprueba que exista.
+#   * [sample]: semilla por defecto de `sb-report generate-sample` (F3, DF3-1). Valor 20261001 CONFIRMADO por el
+#     propietario el 2026-11-21.
+config_version = 1
+
+[run]
+period_start = 2026-10-01
+period_end   = 2026-10-31
+null_tokens  = ["", "N/A", "NA", "n/a", "-", "null"]
+total_tolerance = "0.01"                      # cadena -> Decimal; APROBADO (P-03, 2026-11-20)
+duplicate_policy = "warn"                     # único valor del MVP (D12)
+catalog_path = "data/reference/products.csv"  # opcional; si se omite, R12 queda desactivada (D8). Archivo de F3
+
+[limits]                              # valores aprobados (P-12, 2026-11-21)
+max_file_mb = 20                      # L1: bytes leídos del archivo (lectura acotada N+1), XLSX o CSV
+max_zip_entries = 200                 # entradas del directorio central ZIP
+max_total_uncompressed_mb = 100       # L2: bytes descomprimidos REALES acumulados del archivo
+max_entry_uncompressed_mb = 50        # L2: bytes descomprimidos REALES por entrada
+max_declared_compression_ratio = 200  # L3: HEURÍSTICA sobre tamaños declarados; no es control real
+max_shared_strings = 200000           # L4: elementos <si> de sharedStrings.xml (pre-escaneo)
+max_shared_strings_chars = 20000000   # L4: caracteres de texto de sharedStrings.xml (pre-escaneo)
+max_sheets = 50                       # L4: hojas del libro
+max_columns = 200                     # L4: celdas por fila iterada
+max_cells_per_file = 1000000          # L4: celdas iteradas en la hoja declarada
+max_text_chars = 32767                # L4: longitud de un texto de celda o campo CSV
+max_records_per_file = 50000          # L4: registros por archivo
+max_records_per_run = 200000          # L4: registros acumulados de la ejecución
+# Ninguna clave es un límite de RAM del proceso (L5, §11.1.1).
+
+[sample]
+seed = 20261001                       # confirmado por el propietario (2026-11-21)
+
+[[sources]]
+id = "norte-xlsx"
+branch_id = "NORTE"
+match = "norte_ventas_*.xlsx"        # glob sobre la ruta relativa; cada archivo debe coincidir con exactamente 1 perfil
+type = "xlsx"
+sheet = "Ventas"
+header_row = 3
+date_formats = ["%d/%m/%Y"]
+accept_native_dates = true
+accept_serial_dates = false
+decimal_separator = "."
+thousands_separator = ""
+  [sources.columns]                  # campo -> alias; colisiones comprobadas con la normalización canónica (PO-2)
+  transaction_id = ["no ticket", "n ticket"]
+  sale_date      = ["fecha"]
+  product_sku    = ["codigo"]
+  product_name   = ["producto"]
+  quantity       = ["cantidad"]
+  unit_price     = ["precio unitario"]
+  reported_total = ["total"]
+
+[[sources]]
+id = "centro-csv"
+branch_id = "CENTRO"
+match = "centro_ventas_*.csv"
+type = "csv"
+encoding = "cp1252"
+delimiter = ";"
+header_row = 1
+date_formats = ["%d-%m-%Y"]
+decimal_separator = ","
+thousands_separator = "."
+  [sources.columns]
+  transaction_id = ["ticket"]
+  sale_date      = ["fecha venta"]
+  product_sku    = ["sku"]
+  product_name   = ["descripcion"]
+  quantity       = ["unidades"]
+  unit_price     = ["precio"]
+  reported_total = ["importe"]
+
+[[sources]]
+id = "sur-xlsx"
+branch_id = "SUR"
+branch_aliases = ["sur", "sucursal sur"]
+match = "sur_ventas_*_tienda.xlsx"
+type = "xlsx"
+sheet = "Datos"
+header_row = 1
+date_formats = ["%Y-%m-%d"]
+accept_native_dates = true
+accept_serial_dates = false
+decimal_separator = "."
+thousands_separator = ""
+  [sources.columns]
+  transaction_id = ["receipt"]
+  sale_date      = ["date"]
+  product_sku    = ["sku"]
+  product_name   = ["item"]
+  quantity       = ["qty"]
+  unit_price     = ["unit price"]
+  branch_in_file = ["sucursal"]
+
+[[sources]]
+id = "sur-csv"
+branch_id = "SUR"
+match = "sur_ventas_*_web.csv"
+type = "csv"
+encoding = "utf-8-sig"
+delimiter = ","
+header_row = 1
+date_formats = ["%d/%m/%Y", "%m/%d/%Y"]      # dos formatos declarados -> posible R03
+decimal_separator = "."
+thousands_separator = ""
+  [sources.columns]
+  transaction_id = ["pedido"]
+  sale_date      = ["fecha"]
+  product_sku    = ["sku"]
+  product_name   = ["nombre"]
+  quantity       = ["cant"]
+  unit_price     = ["pu"]

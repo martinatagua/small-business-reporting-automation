@@ -1,0 +1,69 @@
+{
+  "duplicates": {
+    "excess": 3,
+    "groups": 3,
+    "potentially_duplicated_amount": "809.50",
+    "records": 6
+  },
+  "issues_by_code": {
+    "C01_INVALID_CONFIG": 0,
+    "F01_UNREADABLE_FILE": 0,
+    "F02_ENCODING_ERROR": 0,
+    "F03_UNSUPPORTED_TYPE": 0,
+    "F04_LIMIT_EXCEEDED": 0,
+    "F05_NO_PROFILE": 0,
+    "F06_AMBIGUOUS_PROFILE": 0,
+    "F07_SHEET_NOT_FOUND": 0,
+    "F08_REQUIRED_COLUMN_MISSING": 0,
+    "F09_COLUMN_COLLISION": 0,
+    "F10_NO_DATA_ROWS": 0,
+    "F11_UNMAPPED_COLUMN": 2,
+    "R01_MISSING_REQUIRED": 6,
+    "R02_INVALID_DATE": 3,
+    "R03_AMBIGUOUS_DATE": 2,
+    "R04_INVALID_NUMBER": 4,
+    "R05_NON_INTEGER_QUANTITY": 2,
+    "R06_ZERO_QUANTITY": 2,
+    "R07_NEGATIVE_QUANTITY": 3,
+    "R08_ZERO_PRICE": 2,
+    "R09_NEGATIVE_PRICE": 2,
+    "R10_DATE_OUT_OF_PERIOD": 3,
+    "R11_TOTAL_MISMATCH": 2,
+    "R12_UNKNOWN_SKU": 3,
+    "R13_DUPLICATE_SUSPECT": 6,
+    "R14_BRANCH_CONFLICT": 1
+  },
+  "out_of_scope_by_code": {
+    "R07_NEGATIVE_QUANTITY": 3,
+    "R10_DATE_OUT_OF_PERIOD": 3
+  },
+  "records": {
+    "by_branch": {
+      "CENTRO": 53,
+      "NORTE": 55,
+      "SUR": 69
+    },
+    "by_file": {
+      "centro_ventas_2026-10.csv": 53,
+      "norte_ventas_2026-10.xlsx": 55,
+      "sur_ventas_2026-10_tienda.xlsx": 34,
+      "sur_ventas_2026-10_web.csv": 35
+    },
+    "by_status": {
+      "observed": 23,
+      "out_of_scope": 6,
+      "valid": 148
+    },
+    "total": 177
+  },
+  "sales": {
+    "gross_ordinary_by_branch": {
+      "CENTRO": "9887.19",
+      "NORTE": "6628.30",
+      "SUR": "6446.48"
+    },
+    "gross_ordinary_total": "22961.97",
+    "units": 466,
+    "zero_price_lines": 2
+  }
+}

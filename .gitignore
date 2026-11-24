@@ -1,0 +1,35 @@
+.venv/
+output/
+run.log
+data/client/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Cobertura, linters y herramientas
+.coverage
+.coverage.*
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+
+# Editor y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*Zone.Identifier
+
+# Registros y paquetes generados (los ZIP se publican, si acaso, como releases)
+*.log
+*.zip

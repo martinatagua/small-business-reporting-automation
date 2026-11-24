@@ -1,0 +1,47 @@
+# Perfil propio del oráculo manual (no es config/demo.toml). Escrito a mano.
+config_version = 1
+
+[run]
+period_start = 2026-10-01
+period_end = 2026-10-31
+null_tokens = ["", "N/A"]
+total_tolerance = "0.01"
+duplicate_policy = "warn"
+catalog_path = "catalog.csv"
+
+[limits]
+max_file_mb = 1
+max_zip_entries = 20
+max_total_uncompressed_mb = 10
+max_entry_uncompressed_mb = 5
+max_declared_compression_ratio = 100
+max_shared_strings = 1000
+max_shared_strings_chars = 100000
+max_sheets = 5
+max_columns = 20
+max_cells_per_file = 10000
+max_text_chars = 1000
+max_records_per_file = 1000
+max_records_per_run = 2000
+
+[[sources]]
+id = "oracle-csv"
+branch_id = "ALFA"
+branch_aliases = ["alfa tienda"]
+match = "sales.csv"
+type = "csv"
+encoding = "utf-8"
+delimiter = ","
+header_row = 1
+date_formats = ["%d/%m/%Y", "%m/%d/%Y"]
+decimal_separator = "."
+thousands_separator = ""
+  [sources.columns]
+  transaction_id = ["ticket"]
+  sale_date      = ["date"]
+  product_sku    = ["sku"]
+  product_name   = ["item"]
+  quantity       = ["qty"]
+  unit_price     = ["price"]
+  reported_total = ["total"]
+  branch_in_file = ["branch"]

@@ -1,0 +1,54 @@
+ticket;fecha_venta;sku;descripcion;unidades;precio;importe;Observaciones
+C200010;23-10-2026;CD-204;Cuaderno A5;1;250,00;250,00;Pago en efectivo
+C200016;31-10-2026;CD-202 ;Detergente 3 l;4;120,75;483,00;Sin observaciones
+C200001;01-10-2026;CD-205;Bolígrafo azul;1;15,20;15,20;Entrega en mostrador
+C200002;31-10-2026;CD-204;Cuaderno A5;5;250,00;1.250,00;Pago en efectivo
+C200050;04-10-2026;CD-204;Cuaderno A5;3;250,00;750,00;Sin observaciones
+C200013;04-10-2026;GH-404;Bolsa reutilizable;3;18,00;54,00;Entrega en mostrador
+C200024;06-10-2026;AB-104;Aceite de oliva 500 ml;5;19,99;99,95;Pago en efectivo
+C200048;04-10-2026;AB-101;Café molido 250 g;2;12,50;25,02;Sin observaciones
+C200032;03-10-2026;AB-105;Arroz 5 kg;4;45,00;180,00;Entrega en mostrador
+C200049;23-10-2026;ZZ-901;Té verde caja;5;7,25;36,25;Pago en efectivo
+C200052;19-10-2026;AB-105; -1+2;4;45,00;180,00;Sin observaciones
+C200022;23-10-2026;EF-301;Galletas surtidas;1;9,99;9,99;Entrega en mostrador
+C200020;02-10-2026;GH-401;Pilas AA x4;1;11,10;11,10;Pago en efectivo
+C200028;24-10-2026;CD-204;Cuaderno A5;5;250,00;1.250,00;Sin observaciones
+C200008;18-10-2026;AB-101;Café molido 250 g;4;12,50;50,00;Entrega en mostrador
+C200047;31-02-2026;GH-402;Bombilla LED;1;99,50;99,50;Pago en efectivo
+C200011;02-10-2026;EF-302;Jugo de naranja 1 l;4;32,50;130,00;Sin observaciones
+C200043;09-10-2026;EF-305;Mermelada de fresa;3;-2,50;-7,50;Entrega en mostrador
+C200034;18-10-2026;CD-204;Cuaderno A5;5;250,00;1.250,00;Pago en efectivo
+C200025;01-10-2026;GH-403;Cinta adhesiva;4;4,25;17,00;Sin observaciones
+C200027;19-10-2026;GH-402;Bombilla LED;1;99,50;99,50;Entrega en mostrador
+C200006;27-10-2026;EF-304;Pan de molde;3;64,00;192,00;Pago en efectivo
+C200007;15-10-2026;GH-402;Bombilla LED;1;99,50;99,50;Sin observaciones
+C200033;15-10-2026;GH-404 ;Bolsa reutilizable;1;18,00;18,00;Entrega en mostrador
+C200045;27-10-2026;GH-403;Cinta adhesiva;12 cajas;4,25;8,50;Pago en efectivo
+C200038;17-10-2026;GH-405;Linterna de mano;5;75,50;377,50;Sin observaciones
+C200042;20-10-2026;EF-301;Galletas surtidas;3;0,00;0,00;Entrega en mostrador
+C200003;13-10-2026;EF-305;Mermelada de fresa;1;27,80;27,80;Pago en efectivo
+C200014;22-10-2026;EF-303;Agua mineral 2 l;4;1,75;7,00;Sin observaciones
+C200031;01-10-2026;EF-302;Jugo de naranja 1 l;4;32,50;130,00;Entrega en mostrador
+C200036;27-10-2026;CD-202;Detergente 3 l;2;120,75;241,50;Pago en efectivo
+C200040;06-10-2026;GH-401 ;Pilas AA x4;2;11,10;22,20;Sin observaciones
+C200012;05-10-2026;AB-105;Arroz 5 kg;2;45,00;90,00;Entrega en mostrador
+C200030;22-10-2026;CD-204;Cuaderno A5;3;250,00;750,00;Pago en efectivo
+C200046;02-10-2026;EF-304;Pan de molde;1,5;64,00;96,00;Sin observaciones
+C200005;28-10-2026;GH-403;Cinta adhesiva;1;4,25;4,25;Entrega en mostrador
+C200026;10-10-2026;EF-304;Pan de molde;5;64,00;320,00;Pago en efectivo
+C200017;24-10-2026;CD-201;Jabón neutro;2;8,90;17,80;Sin observaciones
+C200018;21-10-2026;GH-405;Linterna de mano;3;75,50;226,50;Entrega en mostrador
+C200050;04-10-2026;CD-204;Cuaderno A5;3;250,00;750,00;Pago en efectivo
+C200019;31-10-2026;AB-103;Azúcar 1 kg;4;3,00;12,00;Sin observaciones
+C200041;15-10-2026;CD-205;Bolígrafo azul;-1;15,20;-15,20;Entrega en mostrador
+C200015;12-10-2026;CD-203;Papel higiénico x12;3;5,50;16,50;Pago en efectivo
+C200029;18-10-2026;AB-102;Té verde caja;3;7,25;21,75;Sin observaciones
+C200035;04-10-2026;CD-203;Papel higiénico x12;3;5,50;16,50;Entrega en mostrador
+C200037;20-10-2026;CD-201;Jabón neutro;2;8,90;17,80;Pago en efectivo
+C200021;06-10-2026;CD-205;Bolígrafo azul;4;15,20;60,80;Sin observaciones
+C200051;07-10-2026;EF-302;+1;5;32,50;162,50;Entrega en mostrador
+C200009;20-10-2026;AB-102;Té verde caja;3;7,25;21,75;Pago en efectivo
+C200039;19-10-2026;AB-103;Azúcar 1 kg;4;3,00;12,00;Sin observaciones
+C200044;N/A;AB-104;Aceite de oliva 500 ml;5;19,99;99,95;Entrega en mostrador
+C200023;31-10-2026;EF-305;Mermelada de fresa;2;27,80;55,60;Pago en efectivo
+C200004;24-10-2026;AB-104;Aceite de oliva 500 ml;5;19,99;99,95;Sin observaciones
